@@ -12,9 +12,13 @@ public class TestController {
     @Value("${name.app}")
     private String name;
 
+    @Value("${version.app}")
+    private String version;
+
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String getName()
     {
-        return name;
+
+        return name+"-"+version;
     }
 }
